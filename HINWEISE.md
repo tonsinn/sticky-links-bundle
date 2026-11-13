@@ -28,4 +28,9 @@ Dauerhafte Regeln, die bei Änderungen am Bundle gelten. Neue Erkenntnisse hier 
 - Die Vorlage-Website wird in veröffentlichten Texten nicht genannt.
 - Vor dem ersten Push: `git grep -I -l -F -- "<wert>" $(git rev-list --all)` für alle Werte aus `testinstall.env`.
 
+- Hilfetexte im Backend kurz halten (etwa 80 Zeichen): Contao 5.7 schneidet längere Texte mit „…“ ab.
+- Browser-Tests gegen DDEV: Der Headless-Browser lehnt das DDEV-Zertifikat ab und Contao leitet wegen `useSSL` auf
+  HTTPS um — Chromium mit `--ignore-certificate-errors` starten und per CDP verbinden.
+- `files/<theme>/` muss öffentlich sein (`.public` + `contao:symlinks`), sonst lädt die RockSolid-Schrift nicht.
+
 Details und Begründungen: `/home/tonsinn/belegungsplan-bundle/CLAUDE.md` und `/home/tonsinn/img-navi/HINWEISE.md`.

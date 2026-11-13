@@ -36,6 +36,23 @@
 - Geprüft: `php -l`, XLIFF wohlgeformt, `composer validate`, Icon-Provider gegen `fortawesome/font-awesome` 7.3.1
   (2.883 Icons) und einen Test-SVG-Font. **Nicht geprüft:** Lauf in Contao (Docker Desktop war aus).
 
+## 2026-11-13 — Teil 4: Test in Contao 5.7.13 (DDEV `~/contao57`)
+
+- Bundle als Path-Repository `./sticky-links-bundle` eingebunden (`repositories.stickylinks`), Migration legte 14
+  Spalten an; als Nebeneffekt lief die bis dahin ausstehende Core-Migration `PrepareForOutputEncodingMigration`.
+  Sicherungen: `composer.json.bak-stickylinks`, `composer.lock.bak-stickylinks` in `~/contao57`.
+- Testdaten per SQL: Seite 900 „Sticky-Inhalte“, Artikel 900/901, Leiste 900 mit Symbolen 901–903, Modul 900 im
+  Layout 1.
+- Frontend (Playwright gegen Headless-Chromium): alle sechs Positionen, Farben/Defaults, Label bei Hover, Panel per
+  Klick/Tastatur/Escape/Außenklick/Hover, drei Mobil-Modi, kein Panel-Inhalt im Suchindex, keine JS-Fehler.
+- Backend: Formulare von Leiste, Symbol (Link/Panel) und Modul, Unterpaletten, Speichern, Vorschau in der Liste.
+- RockSolid mit selbst erzeugter Test-Schrift: Auswahlmenü und Icon-Picker v2.1.3 (auswählen, speichern), Schrift
+  lädt im Frontend. Picker, Test-Schrift und temporärer Admin danach wieder entfernt.
+- Nachgebessert: Hilfetexte gekürzt (das Backend schneidet lange Texte ab).
+- Hinweis: Der Headless-Browser meldet `(hover: hover)` nicht; die Hover-Logik wurde mit überschriebenem
+  `matchMedia` geprüft.
+
 ## Archiv (erledigte TODO-Punkte)
 
 - Anforderungen geklärt, Paket-Identität bestätigt, Bundle-Gerüst angelegt (2026-11-13).
+- Erster Test in Contao 5.7 (DDEV) bestanden (2026-11-13).

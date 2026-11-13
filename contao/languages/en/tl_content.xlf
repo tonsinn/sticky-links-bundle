@@ -45,7 +45,7 @@
         <source>Distance from top/bottom</source>
       </trans-unit>
       <trans-unit id="tl_content.stickyLinksOffset.1">
-        <source>Distance of the bar from the top or bottom of the window, e.g. to keep it clear of a fixed header. Has no effect on a centred bar unless it is taller than the window. Default: 5rem.</source>
+        <source>Distance from the top or bottom of the window. Default: 5rem.</source>
       </trans-unit>
       <trans-unit id="tl_content.stickyLinksSize.0">
         <source>Icon size</source>
@@ -66,7 +66,7 @@
         <source>On small screens</source>
       </trans-unit>
       <trans-unit id="tl_content.stickyLinksMobile.1">
-        <source>Behaviour on screens narrower than 768px. Panels always open across the full width there.</source>
+        <source>Below 768px width. Panels open across the full width there.</source>
       </trans-unit>
       <trans-unit id="tl_content.stickyLinksMobileOptions.edge">
         <source>small icons at the edge</source>
@@ -81,25 +81,25 @@
         <source>Icon colour</source>
       </trans-unit>
       <trans-unit id="tl_content.stickyLinksColor.1">
-        <source>Colour of the icon. Bar: applies to all icons; leave empty for the accent colour (CSS variable --stickylinks-accent). Single icon: leave empty to use the colour of the bar.</source>
+        <source>Leave empty: bar = accent colour, single icon = colour of the bar.</source>
       </trans-unit>
       <trans-unit id="tl_content.stickyLinksBackground.0">
         <source>Background colour</source>
       </trans-unit>
       <trans-unit id="tl_content.stickyLinksBackground.1">
-        <source>Background of the icon tile. Bar: applies to all icons; leave empty for white (ffffff). Single icon: leave empty to use the colour of the bar. On hover, icon and background colour are swapped.</source>
+        <source>Leave empty: bar = white, single icon = colour of the bar.</source>
       </trans-unit>
       <trans-unit id="tl_content.stickyLinksText.0">
         <source>Text</source>
       </trans-unit>
       <trans-unit id="tl_content.stickyLinksText.1">
-        <source>Link: slides out next to the icon on hover. Panel: title of the panel. In both cases it is also the name of the icon for screen readers.</source>
+        <source>Link: slide-out text. Panel: title. Also the name for screen readers.</source>
       </trans-unit>
       <trans-unit id="tl_content.stickyLinksType.0">
         <source>Behaviour</source>
       </trans-unit>
       <trans-unit id="tl_content.stickyLinksType.1">
-        <source>Link: the icon leads to a page, URL, phone number or e-mail address. Panel: the icon opens a panel showing an article.</source>
+        <source>Link to a page, URL, phone number or e-mail, or a panel showing an article.</source>
       </trans-unit>
       <trans-unit id="tl_content.stickyLinksTypeOptions.link">
         <source>Link</source>
@@ -111,13 +111,13 @@
         <source>Article</source>
       </trans-unit>
       <trans-unit id="tl_content.stickyLinksArticle.1">
-        <source>Article shown in the panel. It can be kept in a hidden page or column, so it does not appear anywhere else.</source>
+        <source>Article shown in the panel; it can be kept in a hidden page.</source>
       </trans-unit>
       <trans-unit id="tl_content.stickyLinksIconSource.0">
         <source>Icon set</source>
       </trans-unit>
       <trans-unit id="tl_content.stickyLinksIconSource.1">
-        <source>Font Awesome Free is always available. The RockSolid icon font is offered if the Tao or Oneo theme is installed.</source>
+        <source>RockSolid icons are only offered if the Tao or Oneo theme is installed.</source>
       </trans-unit>
       <trans-unit id="tl_content.stickyLinksIconSourceOptions.fontawesome">
         <source>Font Awesome Free</source>
@@ -129,7 +129,7 @@
         <source>Icon</source>
       </trans-unit>
       <trans-unit id="tl_content.stickyLinksIconFa.1">
-        <source>Type to search for the English name of the icon, e.g. "phone", "envelope" or "location-dot". All icons: fontawesome.com/search?ic=free</source>
+        <source>Search for the English name, e.g. phone, envelope, location-dot.</source>
       </trans-unit>
       <trans-unit id="tl_content.stickyLinksIconFaGroups.solid">
         <source>Solid</source>

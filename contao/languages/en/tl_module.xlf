@@ -6,7 +6,7 @@
         <source>Sticky links bar</source>
       </trans-unit>
       <trans-unit id="tl_module.stickyLinksElement.1">
-        <source>Choose the content element of the type "Sticky links" that the module should show. The article containing it does not have to be published on a page of its own.</source>
+        <source>Content element of the type "Sticky links" that the module should show.</source>
       </trans-unit>
     </body>
   </file>

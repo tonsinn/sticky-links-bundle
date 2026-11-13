@@ -7,8 +7,8 @@
         <target>Sticky-Links-Leiste</target>
       </trans-unit>
       <trans-unit id="tl_module.stickyLinksElement.1">
-        <source>Choose the content element of the type "Sticky links" that the module should show. The article containing it does not have to be published on a page of its own.</source>
-        <target>Wähle das Inhaltselement vom Typ „Sticky-Links“, das das Modul ausgeben soll. Der Artikel, in dem es liegt, muss nicht selbst auf einer Seite erscheinen.</target>
+        <source>Content element of the type "Sticky links" that the module should show.</source>
+        <target>Inhaltselement vom Typ „Sticky-Links“, das das Modul ausgeben soll.</target>
       </trans-unit>
     </body>
   </file>

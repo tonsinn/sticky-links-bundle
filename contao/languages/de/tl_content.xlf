@@ -59,8 +59,8 @@
         <target>Abstand oben/unten</target>
       </trans-unit>
       <trans-unit id="tl_content.stickyLinksOffset.1">
-        <source>Distance of the bar from the top or bottom of the window, e.g. to keep it clear of a fixed header. Has no effect on a centred bar unless it is taller than the window. Default: 5rem.</source>
-        <target>Abstand der Leiste vom oberen bzw. unteren Fensterrand, z. B. um einen fixierten Seitenkopf freizuhalten. Wirkt bei mittiger Lage nur, wenn die Leiste höher als das Fenster ist. Standard: 5rem.</target>
+        <source>Distance from the top or bottom of the window. Default: 5rem.</source>
+        <target>Abstand vom oberen bzw. unteren Fensterrand. Standard: 5rem.</target>
       </trans-unit>
       <trans-unit id="tl_content.stickyLinksSize.0">
         <source>Icon size</source>
@@ -87,8 +87,8 @@
         <target>Auf kleinen Bildschirmen</target>
       </trans-unit>
       <trans-unit id="tl_content.stickyLinksMobile.1">
-        <source>Behaviour on screens narrower than 768px. Panels always open across the full width there.</source>
-        <target>Verhalten auf Bildschirmen schmaler als 768px. Panels öffnen dort immer über die ganze Breite.</target>
+        <source>Below 768px width. Panels open across the full width there.</source>
+        <target>Unter 768px Breite. Panels öffnen dort über die ganze Breite.</target>
       </trans-unit>
       <trans-unit id="tl_content.stickyLinksMobileOptions.edge">
         <source>small icons at the edge</source>
@@ -107,32 +107,32 @@
         <target>Symbolfarbe</target>
       </trans-unit>
       <trans-unit id="tl_content.stickyLinksColor.1">
-        <source>Colour of the icon. Bar: applies to all icons; leave empty for the accent colour (CSS variable --stickylinks-accent). Single icon: leave empty to use the colour of the bar.</source>
-        <target>Farbe des Symbols. Leiste: gilt für alle Symbole; leer lassen für die Akzentfarbe (CSS-Variable --stickylinks-accent). Einzelnes Symbol: leer lassen, um die Farbe der Leiste zu übernehmen.</target>
+        <source>Leave empty: bar = accent colour, single icon = colour of the bar.</source>
+        <target>Leer lassen: Leiste = Akzentfarbe, einzelnes Symbol = Farbe der Leiste.</target>
       </trans-unit>
       <trans-unit id="tl_content.stickyLinksBackground.0">
         <source>Background colour</source>
         <target>Hintergrundfarbe</target>
       </trans-unit>
       <trans-unit id="tl_content.stickyLinksBackground.1">
-        <source>Background of the icon tile. Bar: applies to all icons; leave empty for white (ffffff). Single icon: leave empty to use the colour of the bar. On hover, icon and background colour are swapped.</source>
-        <target>Hintergrund der Symbolfläche. Leiste: gilt für alle Symbole; leer lassen für Weiß (ffffff). Einzelnes Symbol: leer lassen, um die Farbe der Leiste zu übernehmen. Beim Überfahren werden Symbol- und Hintergrundfarbe getauscht.</target>
+        <source>Leave empty: bar = white, single icon = colour of the bar.</source>
+        <target>Leer lassen: Leiste = Weiß, einzelnes Symbol = Farbe der Leiste.</target>
       </trans-unit>
       <trans-unit id="tl_content.stickyLinksText.0">
         <source>Text</source>
         <target>Text</target>
       </trans-unit>
       <trans-unit id="tl_content.stickyLinksText.1">
-        <source>Link: slides out next to the icon on hover. Panel: title of the panel. In both cases it is also the name of the icon for screen readers.</source>
-        <target>Link: fährt beim Überfahren neben dem Symbol heraus. Panel: Titel des Panels. In beiden Fällen ist er zugleich der Name des Symbols für Screenreader.</target>
+        <source>Link: slide-out text. Panel: title. Also the name for screen readers.</source>
+        <target>Link: herausfahrender Text. Panel: Titel. Zugleich Name für Screenreader.</target>
       </trans-unit>
       <trans-unit id="tl_content.stickyLinksType.0">
         <source>Behaviour</source>
         <target>Verhalten</target>
       </trans-unit>
       <trans-unit id="tl_content.stickyLinksType.1">
-        <source>Link: the icon leads to a page, URL, phone number or e-mail address. Panel: the icon opens a panel showing an article.</source>
-        <target>Link: Das Symbol führt zu einer Seite, URL, Telefonnummer oder E-Mail-Adresse. Panel: Das Symbol öffnet ein Panel mit einem Artikel.</target>
+        <source>Link to a page, URL, phone number or e-mail, or a panel showing an article.</source>
+        <target>Link zu Seite, URL, Telefon oder E-Mail – oder Panel mit einem Artikel.</target>
       </trans-unit>
       <trans-unit id="tl_content.stickyLinksTypeOptions.link">
         <source>Link</source>
@@ -147,16 +147,16 @@
         <target>Artikel</target>
       </trans-unit>
       <trans-unit id="tl_content.stickyLinksArticle.1">
-        <source>Article shown in the panel. It can be kept in a hidden page or column, so it does not appear anywhere else.</source>
-        <target>Artikel, der im Panel angezeigt wird. Er kann in einer versteckten Seite oder Spalte liegen, damit er sonst nirgends erscheint.</target>
+        <source>Article shown in the panel; it can be kept in a hidden page.</source>
+        <target>Artikel, der im Panel erscheint; er kann in einer versteckten Seite liegen.</target>
       </trans-unit>
       <trans-unit id="tl_content.stickyLinksIconSource.0">
         <source>Icon set</source>
         <target>Symbolsatz</target>
       </trans-unit>
       <trans-unit id="tl_content.stickyLinksIconSource.1">
-        <source>Font Awesome Free is always available. The RockSolid icon font is offered if the Tao or Oneo theme is installed.</source>
-        <target>Font Awesome Free steht immer zur Verfügung. Die RockSolid-Icon-Schrift wird angeboten, wenn das Tao- oder Oneo-Theme installiert ist.</target>
+        <source>RockSolid icons are only offered if the Tao or Oneo theme is installed.</source>
+        <target>RockSolid-Icons erscheinen nur mit installiertem Tao- oder Oneo-Theme.</target>
       </trans-unit>
       <trans-unit id="tl_content.stickyLinksIconSourceOptions.fontawesome">
         <source>Font Awesome Free</source>
@@ -171,8 +171,8 @@
         <target>Symbol</target>
       </trans-unit>
       <trans-unit id="tl_content.stickyLinksIconFa.1">
-        <source>Type to search for the English name of the icon, e.g. "phone", "envelope" or "location-dot". All icons: fontawesome.com/search?ic=free</source>
-        <target>Tippe, um nach dem englischen Namen des Symbols zu suchen, z. B. „phone“, „envelope“ oder „location-dot“. Alle Symbole: fontawesome.com/search?ic=free</target>
+        <source>Search for the English name, e.g. phone, envelope, location-dot.</source>
+        <target>Nach dem englischen Namen suchen, z. B. phone, envelope, location-dot.</target>
       </trans-unit>
       <trans-unit id="tl_content.stickyLinksIconFaGroups.solid">
         <source>Solid</source>

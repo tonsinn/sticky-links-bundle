@@ -40,9 +40,10 @@ Vor dem Anlegen neuer Dateien erst dort nachsehen und die Konvention übernehmen
   Auf dem KeyHelp-Server PHP immer über `keyhelp-php85` aufrufen (siehe `img-navi/HINWEISE.md`).
 
 ## Status
-Stand 2026-11-13: Bundle vollständig implementiert (Version 1.0.0 vorbereitet), lokales Git-Repo auf `main`.
-**Noch nicht in Contao getestet** (Docker/DDEV lief nicht) und **nicht veröffentlicht** (kein GitHub-Repo, kein Push,
-kein Tag) — nächste Schritte siehe `TODO.md`.
+Stand 2026-11-13: Bundle implementiert (Version 1.0.0 vorbereitet), lokales Git-Repo auf `main`, **in Contao 5.7.13
+(DDEV `~/contao57`) getestet** — dort als Path-Repository `./sticky-links-bundle` installiert, Testdaten vorhanden.
+Offen: Sichttest, echte RockSolid-Schrift, Contao 6, Veröffentlichung (kein GitHub-Repo, kein Push, kein Tag) —
+siehe `TODO.md`.
 
 ---
 
