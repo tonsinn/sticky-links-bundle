@@ -1,0 +1,17 @@
+{% extends '@Contao/frontend_module/_base.html.twig' %}
+
+{#
+    Sticky-Links – Modul (tonsinn/sticky-links-bundle)
+
+    Gibt eine vorhandene Sticky-Links-Leiste (Inhaltselement) aus, damit sie über
+    das Seitenlayout auf allen Seiten erscheint.
+
+    Kontext aus dem StickyLinksModuleController:
+        @var int element_id  ID des Inhaltselements vom Typ "sticky_links", 0 = keines
+#}
+
+{% block inner %}
+    {% if element_id > 0 %}
+        {{ content_element(element_id) }}
+    {% endif %}
+{% endblock %}

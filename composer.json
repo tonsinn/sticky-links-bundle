@@ -1,0 +1,51 @@
+{
+    "name": "tonsinn/sticky-links-bundle",
+    "type": "contao-bundle",
+    "description": "Sticky icon links for Contao 5 and 6 - a bar of icons fixed to the left or right edge of the browser window, each one either a link with a slide-out label or a flyout panel showing a Contao article.",
+    "keywords": [
+        "contao",
+        "contao-bundle",
+        "contao5",
+        "contao6",
+        "content-element",
+        "sticky",
+        "icons",
+        "links",
+        "twig",
+        "schnellzugriff"
+    ],
+    "license": "LGPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Mathias Ebert",
+            "homepage": "https://tonsinn.de",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "ext-simplexml": "*",
+        "ext-mbstring": "*",
+        "contao/core-bundle": "^5.3 || ^6.0",
+        "contao/manager-plugin": "^2.0",
+        "fortawesome/font-awesome": "^6.0 || ^7.0"
+    },
+    "suggest": {
+        "madeyourday/contao-rocksolid-icon-picker": "Visual icon picker for the RockSolid icon font of the Tao and Oneo themes"
+    },
+    "conflict": {
+        "contao/core": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tonsinn\\StickyLinksBundle\\": "src/"
+        }
+    },
+    "config": {
+        "preferred-install": "dist"
+    },
+    "extra": {
+        "contao-manager-plugin": "Tonsinn\\StickyLinksBundle\\ContaoManager\\Plugin",
+        "logo": "https://raw.githubusercontent.com/tonsinn/sticky-links-bundle/main/public/sticky-links.svg"
+    }
+}

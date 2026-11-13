@@ -1,0 +1,114 @@
+{% extends '@Contao/content_element/_base.html.twig' %}
+
+{#
+    Sticky-Links – einzelnes Symbol (tonsinn/sticky-links-bundle)
+
+    Kontext aus dem StickyLinksItemController:
+        @var string item_type    "link" oder "panel"
+        @var string text         Text des Symbols (Label bzw. Panel-Titel, zugleich zugänglicher Name)
+        @var string color        Symbolfarbe, leer = Farbe der Leiste
+        @var string background   Hintergrundfarbe, leer = Farbe der Leiste
+        @var string icon_svg     Inline-SVG (Font Awesome), leer bei RockSolid-Icon
+        @var string icon_glyph   Zeichen aus dem RockSolid-Icon-Font, leer bei Font Awesome
+        @var array  icon_fonts   Webfont-Dateien des RockSolid-Fonts: {Pfad: CSS-Format}
+        @var string href         Linkziel (nur Typ "link"), leer wenn keines gesetzt ist
+        @var \Contao\CoreBundle\String\HtmlAttributes link_attributes
+        @var int    article_id   ID des eingebetteten Artikels (nur Typ "panel")
+        @var string panel        fertig gerendertes HTML des Artikels, im Backend leer
+        @var string panel_id     HTML-ID des Panels
+        @var array  properties.stickylinks  {index} – nur innerhalb einer Leiste gesetzt
+#}
+
+{% set in_bar = properties.stickylinks|default(null) is not null %}
+{% set is_panel = item_type == 'panel' %}
+
+{% set attributes = attrs(attributes|default)
+    .addClass(['stickylinks__item', "stickylinks__item--#{item_type}"])
+    .set('role', 'listitem', in_bar)
+    .set('data-stickylinks-item', item_type)
+    .addStyle({
+        '--stickylinks-item-color': color,
+        '--stickylinks-item-bg': background
+    })
+    |csp_unsafe_inline_style
+%}
+
+{% block inner %}
+    {% if is_panel %}
+        {% if as_editor_view %}
+            {{ block('trigger_content') }}
+            <span class="tl_gray">{{ 'MSC.stickyLinksArticleHint'|trans([article_id], 'contao_default') }}</span>
+        {% elseif panel %}
+            {% set trigger_attributes = attrs()
+                .addClass('stickylinks__trigger')
+                .set('type', 'button')
+                .set('aria-expanded', 'false')
+                .set('aria-controls', panel_id)
+                .mergeWith(trigger_attributes|default)
+            %}
+            <button{{ trigger_attributes }}>
+                {{- block('trigger_content') -}}
+            </button>
+
+            {% set panel_attributes = attrs()
+                .addClass('stickylinks__panel')
+                .set('id', panel_id)
+                .set('role', 'region')
+                .set('aria-label', text)
+                .mergeWith(panel_attributes|default)
+            %}
+            <div{{ panel_attributes }}>
+                {% block panel_head %}
+                    <div class="stickylinks__panel-head">
+                        <span class="stickylinks__panel-title">{{ text }}</span>
+                        <button type="button" class="stickylinks__close" data-stickylinks-close aria-label="{{ 'MSC.stickyLinksClose'|trans([], 'contao_default') }}">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                {% endblock %}
+                {# Der Artikel steht auf jeder Seite; er soll nicht für jede Seite in den Suchindex. #}
+                <div class="stickylinks__panel-body">
+                    <!-- indexer::stop -->
+                    {% block panel_content %}{{ panel|raw }}{% endblock %}
+                    <!-- indexer::continue -->
+                </div>
+            </div>
+        {% endif %}
+    {% elseif href %}
+        {% set trigger_attributes = attrs(link_attributes)
+            .addClass('stickylinks__trigger')
+            .mergeWith(trigger_attributes|default)
+        %}
+        <a{{ trigger_attributes }}>
+            {{- block('trigger_content') -}}
+        </a>
+    {% elseif as_editor_view %}
+        {{ block('trigger_content') }}
+    {% endif %}
+{% endblock %}
+
+{% block trigger_content %}
+    <span class="stickylinks__icon">
+        {%- if icon_svg -%}
+            {{ icon_svg|raw }}
+        {%- elseif icon_glyph -%}
+            <span class="stickylinks__glyph" data-stickylinks-glyph="{{ icon_glyph }}" aria-hidden="true"></span>
+        {%- endif -%}
+    </span>
+    <span class="stickylinks__label">{{ text }}</span>
+{% endblock %}
+
+{# Der RockSolid-Icon-Font wird aus der Installation geladen (files/…), unabhängig
+   davon, ob das Seitenlayout die icons.css des Themes einbindet. #}
+{% block metadata %}
+    {% if icon_fonts and not as_editor_view %}
+        {% add 'stickylinks_rocksolid_font' to head %}
+            {% set font_style_attributes = attrs().setIfExists('nonce', csp_nonce('style-src')) %}
+            <style{{ font_style_attributes }}>@font-face{font-family:"StickyLinks RockSolid";font-display:block;src:
+                {%- for path, format in icon_fonts -%}
+                    url("{{ asset(path)|e('css') }}") format("{{ format|e('css') }}"){{ not loop.last ? ',' }}
+                {%- endfor -%}
+            }</style>
+        {% endadd %}
+    {% endif %}
+{% endblock %}

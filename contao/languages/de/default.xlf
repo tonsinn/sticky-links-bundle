@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.1">
+  <file datatype="php" original="contao/languages/en/default.php" source-language="en" target-language="de">
+    <body>
+      <trans-unit id="CTE.sticky_links.0">
+        <source>Sticky links</source>
+        <target>Sticky-Links</target>
+      </trans-unit>
+      <trans-unit id="CTE.sticky_links.1">
+        <source>A bar of icons fixed to the left or right edge of the browser window (wrapper for sticky link icons).</source>
+        <target>Eine Symbolleiste, die fest am linken oder rechten Rand des Browserfensters steht (Hülle für Sticky-Link-Symbole).</target>
+      </trans-unit>
+      <trans-unit id="CTE.sticky_links_item.0">
+        <source>Sticky link icon</source>
+        <target>Sticky-Link-Symbol</target>
+      </trans-unit>
+      <trans-unit id="CTE.sticky_links_item.1">
+        <source>A single icon inside a sticky links bar: a link with a slide-out text or a panel showing an article.</source>
+        <target>Ein einzelnes Symbol in einer Sticky-Links-Leiste: ein Link mit herausfahrendem Text oder ein Panel mit einem Artikel.</target>
+      </trans-unit>
+      <trans-unit id="MSC.stickyLinksLabel">
+        <source>Quick access</source>
+        <target>Schnellzugriff</target>
+      </trans-unit>
+      <trans-unit id="MSC.stickyLinksClose">
+        <source>Close</source>
+        <target>Schließen</target>
+      </trans-unit>
+      <trans-unit id="MSC.stickyLinksEmptyHint">
+        <source>This sticky links bar does not contain any icons yet. Add elements of the type "Sticky link icon" to it.</source>
+        <target>Diese Sticky-Links-Leiste enthält noch keine Symbole. Lege darin Elemente vom Typ „Sticky-Link-Symbol“ an.</target>
+      </trans-unit>
+      <trans-unit id="MSC.stickyLinksArticleHint">
+        <source>Panel with article ID %d</source>
+        <target>Panel mit Artikel ID %d</target>
+      </trans-unit>
+      <trans-unit id="ERR.stickyLinksIcon">
+        <source>Please choose a valid icon (hexadecimal code point of the icon font).</source>
+        <target>Bitte wähle ein gültiges Symbol (hexadezimaler Codepoint der Icon-Schrift).</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

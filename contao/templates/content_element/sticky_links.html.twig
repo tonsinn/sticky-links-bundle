@@ -1,0 +1,86 @@
+{% extends '@Contao/content_element/_base.html.twig' %}
+{% use '@Contao/component/_stylesheet.html.twig' %}
+
+{#
+    Sticky-Links – Leiste (tonsinn/sticky-links-bundle)
+
+    Kontext aus dem StickyLinksController:
+        @var string side        "left" oder "right"
+        @var string vertical    "top", "middle" oder "bottom"
+        @var string size        "s", "m" oder "l"
+        @var string mobile      "edge", "bottom" oder "hide"
+        @var string offset      Abstand vom oberen/unteren Rand als CSS-Länge, leer = Standard
+        @var string color       Symbolfarbe aller Symbole, leer = Standard aus sticky-links.css
+        @var string background  Hintergrundfarbe aller Symbole, leer = Standard
+        @var int    count       Anzahl der Symbole
+        @var list<\Contao\CoreBundle\Fragment\Reference\ContentElementReference> nested_fragments
+
+    Das Aussehen lässt sich ohne Template-Override über die CSS-Custom-Properties
+    in sticky-links.css anpassen (--stickylinks-accent, --stickylinks-size, …).
+#}
+
+{# Leere Werte werden von addStyle weggelassen, dann greift der Standard aus
+   sticky-links.css. #}
+{% set attributes = attrs(attributes|default)
+    .addClass('stickylinks')
+    .set('data-stickylinks', true)
+    .set('data-side', side)
+    .set('data-vertical', vertical)
+    .set('data-size', size)
+    .set('data-mobile', mobile)
+    .addStyle({
+        '--stickylinks-count': count,
+        '--stickylinks-offset': offset,
+        '--stickylinks-color': color,
+        '--stickylinks-bg': background
+    })
+    |csp_unsafe_inline_style
+%}
+
+{# "inner" wird überschrieben: Die Überschrift des Elements dient nur als
+   zugänglicher Name der Leiste und wird nicht sichtbar ausgegeben. #}
+{% block inner %}
+    {% if as_editor_view and count == 0 %}
+        {% block editor_hint %}
+            <p class="tl_info">{{ 'MSC.stickyLinksEmptyHint'|trans([], 'contao_default') }}</p>
+        {% endblock %}
+    {% endif %}
+
+    {% if count > 0 %}
+        {% set list_attributes = attrs()
+            .addClass('stickylinks__list')
+            .set('role', 'list')
+            .set('aria-label', headline.text|default('MSC.stickyLinksLabel'|trans([], 'contao_default')))
+            .mergeWith(list_attributes|default)
+        %}
+        <div{{ list_attributes }}>
+            {% block items %}
+                {% for fragment in nested_fragments %}
+                    {{ content_element(fragment) }}
+                {% endfor %}
+            {% endblock %}
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block style %}
+    {% add 'stickylinks_css' to stylesheets %}
+        {% with {file: stickylinks_css_file|default(asset('bundles/tonsinnstickylinks/css/sticky-links.css'))} %}
+            {{ block('stylesheet_component') }}
+        {% endwith %}
+    {% endadd %}
+{% endblock %}
+
+{% block script %}
+    {% if not as_editor_view %}
+        {% add 'stickylinks_js' to body %}
+            {% set script_attributes = attrs()
+                .set('src', stickylinks_js_file|default(asset('bundles/tonsinnstickylinks/js/sticky-links.js')))
+                .set('defer', true)
+                .setIfExists('nonce', csp_nonce('script-src'))
+                .mergeWith(script_attributes|default)
+            %}
+            <script{{ script_attributes }}></script>
+        {% endadd %}
+    {% endif %}
+{% endblock %}

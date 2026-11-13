@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.1">
+  <file datatype="php" original="contao/languages/en/modules.php" source-language="en">
+    <body>
+      <trans-unit id="FMD.sticky_links.0">
+        <source>Sticky links</source>
+      </trans-unit>
+      <trans-unit id="FMD.sticky_links.1">
+        <source>Shows an existing sticky links bar. Add the module to a page layout to show the bar on every page.</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

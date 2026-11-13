@@ -1,0 +1,15 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+        bind:
+            $projectDir: '%kernel.project_dir%'
+            $rocksolidFont: '%tonsinn_sticky_links.rocksolid_font%'
+
+    Tonsinn\StickyLinksBundle\:
+        resource: '../src/'
+        exclude:
+            - '../src/ContaoManager/'
+            - '../src/DependencyInjection/'
+            - '../src/TonsinnStickyLinksBundle.php'
