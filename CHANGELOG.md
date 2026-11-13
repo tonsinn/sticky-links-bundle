@@ -70,6 +70,14 @@
 - Mathias hat das Paket bei Packagist eingetragen; `v1.0.0` (Commit `d6ee501`) ist dort gelistet, der GitHub-Hook
   `packagist.org/api/github` ist aktiv.
 
+## 2026-11-13 — Teil 7: Metadaten-PR
+
+- W246 läuft mit 1.0.0 von Packagist (Mathias).
+- Logo: weiße Hintergrundfläche entfernt (jetzt transparent, 360×360), im Bundle committet und gepusht.
+- PR https://github.com/contao/package-metadata/pull/865 geöffnet: `de.yml`, `en.yml`, `logo.svg`, „Tao“ und „Oneo“
+  in `linter/allowlists/default.txt`. Linter vorab lokal im Docker-Container (`php:8.3-cli` + aspell) geprüft.
+  Die Rechtschreibprüfung lehnt Komposita wie „Symbolleiste“ oder „Kontaktformular“ ab — Beschreibung umformuliert.
+
 ## Archiv (erledigte TODO-Punkte)
 
 - Anforderungen geklärt, Paket-Identität bestätigt, Bundle-Gerüst angelegt (2026-11-13).

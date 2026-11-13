@@ -43,7 +43,8 @@ Vor dem Anlegen neuer Dateien erst dort nachsehen und die Konvention übernehmen
 ## Status
 Stand 2026-11-13: **v1.0.0 auf GitHub und Packagist veröffentlicht** (Repo öffentlich, Packagist-Hook aktiv).
 Getestet in Contao 5.7.13 (`~/contao57`), 6.0.6 (`~/contao60`) und von Mathias in W246.
-Offen: W246 auf die Packagist-Version umstellen, Metadaten-PR, echte RockSolid-Schrift — siehe `TODO.md`.
+W246 läuft mit 1.0.0 von Packagist. Offen: Merge des Metadaten-PR (contao/package-metadata#865), echte
+RockSolid-Schrift — siehe `TODO.md`.
 
 ## Release
 ```bash
