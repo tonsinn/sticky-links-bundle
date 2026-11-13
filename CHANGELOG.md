@@ -78,9 +78,56 @@
   in `linter/allowlists/default.txt`. Linter vorab lokal im Docker-Container (`php:8.3-cli` + aspell) geprüft.
   Die Rechtschreibprüfung lehnt Komposita wie „Symbolleiste“ oder „Kontaktformular“ ab — Beschreibung umformuliert.
 
+## Aktueller Stand (2026-11-13, Teil 8)
+
+Abschluss der ersten Entwicklungs-Session: Das Bundle ist von der Anforderung bis zur Veröffentlichung fertig.
+Anforderungen geprüft und festgelegt (Teil 3), implementiert nach Vorbild `img-navi`, getestet in Contao 5.7.13
+(`~/contao57`, Teil 4) und 6.0.6 (neue Instanz `~/contao60`, Teil 5) per Playwright gegen Headless-Chromium, von
+Mathias in W246 über ein hochgeladenes ZIP (0.9.0) geprüft und freigegeben, als `v1.0.0` auf GitHub und Packagist
+veröffentlicht (Teil 6), Metadaten-PR `contao/package-metadata#865` geöffnet (Teil 7). Seit Teil 7: zwei
+unversionierte Restdateien in `public/` gelöscht (`sticky-links - Kopie.svg`, `Sticky-Links.svg:Zone.Identifier`);
+PR-Status geprüft — offen, Lint grün, wartet auf Review eines Contao-Maintainers. W246 läuft mit 1.0.0 von
+Packagist.
+
+Nicht verifiziert bleiben: echte RockSolid-Schrift (nur selbst erzeugte Test-Schrift), PHP 8.5 auf dem
+KeyHelp-Server, Hover mit echtem Mauszeiger (im Headless-Browser nur mit überschriebenem `matchMedia`).
+
+### Geänderte/erstellte Dateien — Session 2026-11-13 (Teil 8)
+- `composer.json`, `LICENSE`, `.gitattributes`, `.github/workflows/ci.yml` — Paketgerüst nach `img-navi`
+- `src/` — Bundle-Klasse, Manager-Plugin, Extension + `Configuration` (`rocksolid_font`), Controller für Leiste,
+  Symbol und Modul, `StickyLinksListener` (Backend-Callbacks), `Icon/FontAwesomeIconProvider`,
+  `Icon/RockSolidIconProvider`
+- `config/services.yaml`, `contao/dca/tl_content.php`, `contao/dca/tl_module.php`
+- `contao/languages/{de,en}/*.xlf` — aus einer Tabelle erzeugt, Hilfetexte nachträglich gekürzt
+- `contao/templates/` — `content_element/sticky_links`, `sticky_links_item`, `frontend_module/sticky_links`
+- `public/css/sticky-links.css`, `public/js/sticky-links.js`, `public/sticky-links.svg` (Logo von Mathias,
+  weiße Hintergrundfläche entfernt)
+- `bin/sync-sticky-links.sh` (mit `STICKY_PROJECT` für andere Instanzen), `bin/remote-install.sh`,
+  `bin/remote-uninstall.sh`, `testinstall.env.example`
+- `README.md`, `README.en.md`, `CLAUDE.md`, `TODO.md`, `HINWEISE.md`, `CHANGELOG.md`
+- außerhalb des Repos: `~/contao57` (Path-Repository + Testdaten), `~/contao60` (neu), `~/package-metadata`
+  Branch `add-tonsinn-sticky-links-bundle`; `sticky-links-bundle-0.9.0.zip` im Projektordner (nicht versioniert)
+
+### Entscheidung — Teil 8
+- Typ je Symbol (Link oder Panel mit Artikel) statt „Mouseover + Artikel“ für alle: Hover allein funktioniert
+  weder auf Touch noch per Tastatur.
+- Leiste als Inhaltselement mit verschachtelten Symbolen plus schlankes Modul für die seitenweite Ausgabe: eine
+  Konfiguration, zwei Einbauorte.
+- Font Awesome als Composer-Abhängigkeit und Ausgabe als Inline-SVG (Wunsch von Mathias: zweite Icon-Quelle);
+  RockSolid-Schrift nur aus `files/` lesen, weil sie kommerziell ist.
+- Eigenes Feld `stickyLinksArticle` statt Core-Feld `articleAlias`: dessen Options-Callback schließt bei
+  verschachtelten Elementen den falschen Artikel aus. Nachteil: Redakteure sehen alle Artikel.
+- Contao 6 lokal in neuer DDEV-Instanz getestet statt auf dem Remote-Server: keine `testinstall.env` vorhanden.
+- Vorab-Test in W246 über ZIP-Upload mit Version 0.9.0, damit sie nicht mit der späteren 1.0.0 kollidiert.
+- Metadaten mit dem Logo von Mathias, Hintergrund transparent gemacht (dunkles Manager-Design).
+
 ## Archiv (erledigte TODO-Punkte)
 
 - Anforderungen geklärt, Paket-Identität bestätigt, Bundle-Gerüst angelegt (2026-11-13).
 - Erster Test in Contao 5.7 (DDEV) bestanden (2026-11-13).
 - v1.0.0 auf GitHub und Packagist veröffentlicht (2026-11-13).
 - Privates GitHub-Repo angelegt und gepusht; Test in Contao 6.0.6 (DDEV `~/contao60`) bestanden (2026-11-13).
+- ~~Sichttest durch Mathias~~ erledigt (Teil 8, Test in W246)
+- ~~Packagist-Eintrag, W246 auf 1.0.0 von Packagist umstellen~~ erledigt (Teil 8)
+- ~~Metadaten-PR in `contao/package-metadata` öffnen~~ erledigt (Teil 8, PR #865 — Merge steht aus)
+- ~~Überflüssige Dateien in `public/` löschen~~ erledigt (Teil 8)

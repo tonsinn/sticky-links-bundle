@@ -33,4 +33,26 @@ Dauerhafte Regeln, die bei Änderungen am Bundle gelten. Neue Erkenntnisse hier 
   HTTPS um — Chromium mit `--ignore-certificate-errors` starten und per CDP verbinden.
 - `files/<theme>/` muss öffentlich sein (`.public` + `contao:symlinks`), sonst lädt die RockSolid-Schrift nicht.
 
+## Veröffentlichung und Metadaten
+
+- **Metadaten-Linter lokal nur im Container prüfen** (aspell fehlt auf dem Host): in `~/package-metadata`
+  `docker run --rm -v "$PWD":/src:ro php:8.3-cli bash -c '…'` mit `apt-get install aspell aspell-en aspell-de
+  aspell-cs aspell-es aspell-fr git unzip`, Composer installieren, Repo nach `/work` kopieren,
+  `cd linter && composer install`, dann `php linter/lint meta/tonsinn/<paket>/*.yml`. `linter/vendor` nie im
+  Arbeitsverzeichnis anlegen — es ist nicht in `.gitignore`.
+- Die Rechtschreibprüfung (nur `title` und `description`) lehnt deutsche Komposita ab („Symbolleiste“,
+  „Kontaktformular“, „Browserfensters“). Lieber umformulieren; Eigennamen (z. B. „Tao“, „Oneo“) alphabetisch in
+  `linter/allowlists/default.txt` eintragen.
+- **Logo:** transparent, ohne Hintergrundfläche (dunkles Manager-Design); `public/sticky-links.svg` und das
+  `logo.svg` im Metadaten-Repo müssen identisch sein.
+- **Vorab-Test ohne Packagist:** ZIP aus `git archive HEAD` (beachtet `export-ignore`), in dessen `composer.json`
+  eine Vorab-Version (`0.9.x`, nie die spätere Release-Nummer) eintragen, im Contao Manager über „Pakete hochladen“
+  installieren. Vor dem Umstieg auf Packagist das ZIP im Manager löschen; dabei angebotene Löschungen von
+  `stickyLinks…`-Spalten nicht bestätigen.
+- Das installierte `gh` kennt `--accept-visibility-change-consequences` nicht; Sichtbarkeit über
+  `gh api -X PATCH repos/<owner>/<repo> -f visibility=public` ändern. Direkt danach kann ein SSH-Push einmal
+  fehlschlagen — wiederholen.
+- Die Erstanmeldung eines Pakets bei Packagist macht Mathias selbst (Login nötig); der GitHub-Hook wird dabei
+  automatisch angelegt.
+
 Details und Begründungen: `/home/tonsinn/belegungsplan-bundle/CLAUDE.md` und `/home/tonsinn/img-navi/HINWEISE.md`.

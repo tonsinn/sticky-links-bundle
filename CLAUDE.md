@@ -40,11 +40,14 @@ Vor dem Anlegen neuer Dateien erst dort nachsehen und die Konvention übernehmen
 - Remote: Zugangsdaten nur in `testinstall.env` (steht in `.gitignore`, Vorlage: `testinstall.env.example`).
   Auf dem KeyHelp-Server PHP immer über `keyhelp-php85` aufrufen (siehe `img-navi/HINWEISE.md`).
 
-## Status
-Stand 2026-11-13: **v1.0.0 auf GitHub und Packagist veröffentlicht** (Repo öffentlich, Packagist-Hook aktiv).
-Getestet in Contao 5.7.13 (`~/contao57`), 6.0.6 (`~/contao60`) und von Mathias in W246.
-W246 läuft mit 1.0.0 von Packagist. Offen: Merge des Metadaten-PR (contao/package-metadata#865), echte
-RockSolid-Schrift — siehe `TODO.md`.
+## Letzter Stand
+Stand 2026-11-13: **v1.0.0 ist auf GitHub und Packagist veröffentlicht** (Repo `tonsinn/sticky-links-bundle`
+öffentlich, Packagist-Hook aktiv, CI grün). Getestet in Contao 5.7.13 (`~/contao57`) und 6.0.6 (`~/contao60`);
+W246 läuft mit 1.0.0 von Packagist.
+Metadaten-PR `contao/package-metadata#865` ist offen (Lint grün, wartet auf Review).
+Nächster Schritt: Merge des PR abwarten und den Eintrag im Contao Manager prüfen; danach Test mit echter
+RockSolid-Schrift aus Tao/Oneo (bisher nur Test-Schrift).
+Details: siehe CHANGELOG.md, Teil 8.
 
 ## Release
 ```bash
