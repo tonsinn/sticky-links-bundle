@@ -34,16 +34,16 @@ Symbolleiste, fest am linken/rechten Browserrand (`position: fixed`).
 Vor dem Anlegen neuer Dateien erst dort nachsehen und die Konvention übernehmen, statt sie neu zu erfinden.
 
 ## Test-Umgebungen
+- Lokal Contao 6: DDEV-Instanz `~/contao60` (Contao 6.0, am 2026-11-13 für dieses Projekt angelegt).
 - Lokal: DDEV-Instanz `~/contao57` (Contao 5.7) — gemeinsam genutzt mit `belegungsplan-bundle` und `img-navi`;
   Bundle-Sync-Skript analog `bin/sync-*.sh` anlegen.
 - Remote: Zugangsdaten nur in `testinstall.env` (steht in `.gitignore`, Vorlage: `testinstall.env.example`).
   Auf dem KeyHelp-Server PHP immer über `keyhelp-php85` aufrufen (siehe `img-navi/HINWEISE.md`).
 
 ## Status
-Stand 2026-11-13: Bundle implementiert (Version 1.0.0 vorbereitet), lokales Git-Repo auf `main`, **in Contao 5.7.13
-(DDEV `~/contao57`) getestet** — dort als Path-Repository `./sticky-links-bundle` installiert, Testdaten vorhanden.
-Offen: Sichttest, echte RockSolid-Schrift, Contao 6, Veröffentlichung (kein GitHub-Repo, kein Push, kein Tag) —
-siehe `TODO.md`.
+Stand 2026-11-13: Bundle implementiert (Version 1.0.0 vorbereitet), **getestet in Contao 5.7.13 (`~/contao57`) und
+6.0.6 (`~/contao60`)**, GitHub-Repo `tonsinn/sticky-links-bundle` **privat** angelegt und gepusht.
+Offen: Sichttest, echte RockSolid-Schrift, Repo öffentlich schalten, Tag/Packagist/Metadaten — siehe `TODO.md`.
 
 ---
 

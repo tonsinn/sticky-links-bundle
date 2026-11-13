@@ -3,11 +3,12 @@
 # aktualisiert dort Autoloader, Cache und Assets.
 #
 # Aufruf: bin/sync-sticky-links.sh [--migrate]
+#   Andere Instanz: STICKY_PROJECT=~/contao60 bin/sync-sticky-links.sh
 #   --migrate  zusätzlich contao:migrate ausführen (nach DCA-Änderungen nötig)
 set -euo pipefail
 
 SRC="$(cd "$(dirname "$0")/.." && pwd)/"
-PROJECT="${HOME}/contao57"
+PROJECT="${STICKY_PROJECT:-${HOME}/contao57}"
 DEST="${PROJECT}/sticky-links-bundle/"
 VENDOR="${PROJECT}/vendor/tonsinn/sticky-links-bundle"
 

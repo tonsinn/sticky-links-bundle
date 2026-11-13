@@ -52,7 +52,18 @@
 - Hinweis: Der Headless-Browser meldet `(hover: hover)` nicht; die Hover-Logik wurde mit überschriebenem
   `matchMedia` geprüft.
 
+## 2026-11-13 — Teil 5: GitHub-Repo (privat) und Test in Contao 6.0.6
+
+- Privates Repo `tonsinn/sticky-links-bundle` angelegt, `main` gepusht, CI grün. Neues Logo von Mathias committet.
+- Neue lokale DDEV-Instanz **`~/contao60`** (Contao 6.0.6, PHP 8.4, MariaDB 11.8, `https://contao60.ddev.site`),
+  Konfiguration von `contao57` übernommen. Bundle als Path-Repository installiert, Testdaten wie in `contao57`.
+  Die Instanz hat **keinen Backend-Benutzer** (Test-Admin wieder gelöscht).
+- Gleiche Tests wie in 5.7 bestanden: Frontend (Positionen, Hover, Panel, Mobil), Backend (Formulare, Speichern),
+  Suchindex, RockSolid mit Test-Schrift inkl. Icon-Picker v2.1.3 (MooTools ist im Contao-6-Backend vorhanden).
+- Zusätzlich geprüft: Text mit `<b>`, `&` und Anführungszeichen wird roh gespeichert und maskiert ausgegeben.
+
 ## Archiv (erledigte TODO-Punkte)
 
 - Anforderungen geklärt, Paket-Identität bestätigt, Bundle-Gerüst angelegt (2026-11-13).
 - Erster Test in Contao 5.7 (DDEV) bestanden (2026-11-13).
+- Privates GitHub-Repo angelegt und gepusht; Test in Contao 6.0.6 (DDEV `~/contao60`) bestanden (2026-11-13).
