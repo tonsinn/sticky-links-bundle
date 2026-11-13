@@ -1,6 +1,6 @@
 # CHANGELOG
 
-### v1.0.0 (unveröffentlicht)
+### v1.0.0 (13.11.2026)
 
 #### Neu
 - Inhaltselemente „Sticky-Links“ (Leiste) und „Sticky-Link-Symbol“ (Link oder Panel mit Artikel).
@@ -61,6 +61,12 @@
 - Gleiche Tests wie in 5.7 bestanden: Frontend (Positionen, Hover, Panel, Mobil), Backend (Formulare, Speichern),
   Suchindex, RockSolid mit Test-Schrift inkl. Icon-Picker v2.1.3 (MooTools ist im Contao-6-Backend vorhanden).
 - Zusätzlich geprüft: Text mit `<b>`, `&` und Anführungszeichen wird roh gespeichert und maskiert ausgegeben.
+
+## 2026-11-13 — Teil 6: Veröffentlichung v1.0.0
+
+- Mathias hat das Bundle in W246 über ein hochgeladenes ZIP (Version 0.9.0, Paket-Upload des Contao Managers)
+  ausführlich getestet und freigegeben.
+- Repo öffentlich geschaltet, Tag `v1.0.0` gesetzt und gepusht.
 
 ## Archiv (erledigte TODO-Punkte)
 
