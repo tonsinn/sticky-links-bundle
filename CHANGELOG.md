@@ -67,9 +67,12 @@
 - Mathias hat das Bundle in W246 über ein hochgeladenes ZIP (Version 0.9.0, Paket-Upload des Contao Managers)
   ausführlich getestet und freigegeben.
 - Repo öffentlich geschaltet, Tag `v1.0.0` gesetzt und gepusht.
+- Mathias hat das Paket bei Packagist eingetragen; `v1.0.0` (Commit `d6ee501`) ist dort gelistet, der GitHub-Hook
+  `packagist.org/api/github` ist aktiv.
 
 ## Archiv (erledigte TODO-Punkte)
 
 - Anforderungen geklärt, Paket-Identität bestätigt, Bundle-Gerüst angelegt (2026-11-13).
 - Erster Test in Contao 5.7 (DDEV) bestanden (2026-11-13).
+- v1.0.0 auf GitHub und Packagist veröffentlicht (2026-11-13).
 - Privates GitHub-Repo angelegt und gepusht; Test in Contao 6.0.6 (DDEV `~/contao60`) bestanden (2026-11-13).

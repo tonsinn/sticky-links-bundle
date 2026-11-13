@@ -41,14 +41,14 @@ Vor dem Anlegen neuer Dateien erst dort nachsehen und die Konvention übernehmen
   Auf dem KeyHelp-Server PHP immer über `keyhelp-php85` aufrufen (siehe `img-navi/HINWEISE.md`).
 
 ## Status
-Stand 2026-11-13: **v1.0.0 auf GitHub veröffentlicht** (Repo `tonsinn/sticky-links-bundle` öffentlich, Tag `v1.0.0`).
+Stand 2026-11-13: **v1.0.0 auf GitHub und Packagist veröffentlicht** (Repo öffentlich, Packagist-Hook aktiv).
 Getestet in Contao 5.7.13 (`~/contao57`), 6.0.6 (`~/contao60`) und von Mathias in W246.
-Offen: Packagist-Eintrag (Mathias), Metadaten-PR, echte RockSolid-Schrift — siehe `TODO.md`.
+Offen: W246 auf die Packagist-Version umstellen, Metadaten-PR, echte RockSolid-Schrift — siehe `TODO.md`.
 
 ## Release
 ```bash
 git tag -a vX.Y.Z -m "vX.Y.Z"
-git push origin main --tags     # Packagist zieht per Hook nach, sobald das Paket dort eingetragen ist
+git push origin main --tags     # Packagist zieht per Hook nach
 ```
 
 ---
